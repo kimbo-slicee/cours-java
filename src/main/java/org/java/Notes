@@ -1,0 +1,106 @@
+Java Notes 📝:
+[1]:Class Loader
+-Class Loaders for search 🔎:
+-Delegation Hierarchy Algorithm to Load the classes into the Java file
+-if we want to load class without using instance of in object we use Class.forName(ClassName)
+[2]:super methode
+-All constructs in java Call super methode even we dont mentioned super
+-super call the conjecture of the super Class
+-The Interface 🖼 Show you the Design All variables in interface are final and static
+-class can implement more than one interface
+[3]:Enum Classes
+-enum class can note extend other classes
+-Enum class extend by default to enum class
+[4]:Annotation in Java
+-annotation is a metaData that allow us to interact withe the compiler
+-bug 🐞 is a logical error results or in incorrect or unexpected behaviour.
+-Annotations in java can add for every thank in java such as [Classes,Methods,Methode parameters,even an author annotations  ]
+[5]:Lambda Expression
+-can get parameters without specifying the type of parametre
+-functional interface can have only one methode and withe annotation @FunctionalInterCe
+-Types of interfaces ----||--> Normal interface =  two methods or more
+                     -------||--> Functional interface = SAM[Single Abstract Methods]
+                     -----------||---->  Marker interface = interFace that's Hase no methode and one of this interfaces is serializable
+                      (it's work for serialization take the value of the object and store it iin the hardDrive)
+-Serialization is a mechanism of converting the state of an object into a byte stream.
+ Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory.
+ This mechanism is used to persist the object
+-Exceptions
+    errors Type:
+        Compile time Error
+            Runtime Error--> Exceptions Handling
+               Logical Errors
+-Exception Hierarchy
+                     Object
+                       ↑
+                    Throwable
+                       ↑
+               ┌------------------------┐
+               ↓		                ↓
+             Errors ⛔                Exceptions
+        ┌--Stop the execution-┐←-----------│         ┌--------------------------------┐
+        │                     │            │--------→│     ↓                   ↓      │
+        └---------------------┘            │         │ SQlException       IOException │
+        ↓	      │ 	      ↓            │         └--------------------------------┘---→ CheckedExceptions ✅
+   ThreadDeath    │         IoError        │
+                  ↓                        │
+              outOfMemory                  ↓
+                                   UncheckedExceptions 🟩
+                                 ┌---RuntimeExceptions------┐
+                                 │-NullPointerException-----│
+                                 │-ArrayOutOfBoundException-│
+                                 │-ClassNoteFoundExceptions-│
+                                 └--------------------------┘
+-Ducking Exception using throws:
+-Threads 🧶 in Java ☕
+-scheduler: 📋
+The OS has a scheduler that decides which thread should have access to the CPU
+In simple terms,
+the scheduler allocates CPU time to processes by giving each process a small amount of time to execute
+its instructions,and then it moves on to the next process.The scheduler uses different scheduling algorithms
+to determine which process should be executed next,and it ensures that all processes get a fair share of the CPU time.
+-Some times we need to inherit some properties from sup classes but iin same time we want make childe as thread then
+First we can create a thread by implement Runnable InterFace
+--thread class implement Runnable InterFace.
+
+---> Synchronized ♻
+In this article, we’ll learn using the synchronized block in Java.Simply put, in a multi-threaded environment,
+a race condition occurs when two or more threads attempt to update mutable shared data at the same time.
+Java offers a mechanism to avoid race conditions by synchronizing thread access to shared data.
+A piece of logic marked with synchronized becomes a synchronized block, allowing only one thread to execute at any given time.
+-Thread States;
+---[1]:New
+-----[2]:Runnable
+-------[3]:Running
+---------[4]:Waiting
+-----------[5]:Dead
+
+   ┌———————┐   start()     ┌———————————┐
+   │  New  │-------------->│ Runnable  │┐
+   └———————┘               └———————————┘│       notify()
+                           │     │      └←----←--------←------←-------←┐
+                           │     │                                     │┌———————————┐
+                           │     │                                     └│  Waiting  │
+                           │     │                                      └———————————┘
+                           │     │                                             │
+                           │┌————↓——————┐             Sleep()                  │
+                           ││ Running   │→-----→-----→-------→--------→-------→┘
+                           │└———————————┘             Waite()
+                           │      │
+                           │      │
+                           │      │               Stop()                 ┌———————————┐
+                           └→-----┴→--------------→---------→------→----→│  Dead     │
+                                                                         └———————————┘
+
+-Collection API
+MAP                                 Collection
+-Stream Api
+-One you use it you cant reuse it, it's like a flow of water or you get IllegalStateException
+-ForEach:Accept parameter of type Consumer
+-Filter:
+-Map:
+-reduce:
+-If we want to filter stream  withe multiply threads we can use method named
+-parallelStream methode
+-features of Jdk 21 : we can use jshell java shell
+

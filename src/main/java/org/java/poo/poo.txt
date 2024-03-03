@@ -1,0 +1,99 @@
+*-----------------------------------------------------[1]:Data Hiding📁🔐:--------------- -------------------------------------------*
+*---------------------------------------------------is a software development--------------------------------------------------------*
+*-------------Data Hiding is a software development technique specifically used in object-oriented programming (OOP)-----------------*
+*--------------------to hide internal object details (data members).Data hiding ensures exclusive data access to---------------------*
+*-------------------class members and protected objects integrity by preventing unintended or intended changes-----------------------*
+*------------------------------------------------------------------------------------------------------------------------------------*
+*------------------------------------------------------------[2]Finalizers--------------------------------------------------------------*
+*------------------------------In Java, When we create an Object of the class it occupies some---------------------------------------*
+*--------------------------------space in the memory (Heap). If we do not delete these objects---------------------------------------*
+*---------------------it remains in the memory and occupies unnecessary space that is not upright------------------------------------*
+*------------------------------------------from the aspect of programming------------------------------------------------------------*
+*------------------------------------------Java provides the same as destructor the garbage collector--------------------------------*
+*---------------------------------------is a program (thread ) that runs on the JVM it automatically deletes-------------------------*
+*-------ths unused objects (objects that are no longer used) and free-up the memory. the programme has no need to mange memory-------*
+*-----------------------------------manually. it can be error-prone , vulnerable and may lead to a memory----------------------------*
+*------------------------------------------leak Destructor --> it s also know as finalizer-------------------------------------------*
+*---------------------------------------------------------[3]Static Key word---------------------------------------------------------*
+             You can access it directly through the class name, and it will be shared among all instances of the class.
+               It's important to note that static variables are initialized only once when the class is loaded,
+        and their values are shared among all instances of the class. If you modify the static variable through one instance,
+                    the change will be reflected in all instances and when accessed through the class name.
+            In Java, a static method is a method that belongs to the class rather than to instances of the class.
+Like static variables, static methods are associated with the class itself and can be called without creating an instance of the class.
+                                        Static methods are declared using the static keyword.
+ ---restriction for the static methods:
+ [1]:Static method cannot use data member or call no static method directly.
+ [2]:this and super cannot be used in static methode
+ [3]:Static class == static inner classes
+*--------------------------------------------------------------[4]Operator overloading------------------------------------------------------*
+Operator overloading is a programming language feature that allows you to redefine the meaning of existing operators (like +, -, *, /)
+for custom data types. This means you can make these operators work differently depending on the types of operands they are used with.
+While Java doesn't directly support operator overloading, there are ways to achieve similar functionality.
+*------------------------------------------------------------[5]Inheritance----------------------------------------------------------------*
+what do subclasses inherit in Java?A Subclass inherits all the members (Fields, methods, nested classes)
+from it s superclass; Constructors are not members, so they are not
+inherited by subClasses , but the constructor of the superclass can be invoked from the subclass
+[1]:Types of Inheritance:
+--------- A: Single Inheritance
+------------ B: Multilevel Inheritance
+--------------- C: Hierarchical Inheritance
+------------------- D: Multiple Inheritance [Not supported in java bcs of To reduce the complexity and simplify the languge ]
+----------------------- E: Hybrid Inheritance
+|inheritance represents the is-a relationship which is a relation between the parent and childe class for exempel [devleper is a employe ]
+*-------------------------------------------------------------------[6]Polymorphisme-------------------------------------------------------------------------*
+Polymorphisme=multi forms
+we can achieve polymorphism in java  using the following ways;
+[1]:Methode Overloading
+ this is an example of compile time (static polymorphisme or early binding)
+[2]:Methode Overriding
+    this is an example of runtime time (Dynamic Method Dispatch or late binding)
+     -there must be an is-a relationship(inhertnace)
+     -the methode must have the same name as in the parent class
+     -the methode must have the same parameter as in the parent class
+     ---Late binding "Dynamic Polymorphism", Early binding "Static Polymorphism
+---------------------------------------------------------------------------------------------------------------------
+----Inheritance "is a" relationship-------
+-----Association "has-a relationShip------[------>]
+-Association:is a connection or relation between two separate classes that
+are set up through their objects
+-------Composition "part-of" relationship
+---------Aggregation "has-a" relationShip
+------------------------------------------------------------
+*---------------------------------------------------------[7]final_Keyword-----------------------------------------------------------------------*
+-final Variable (Constant Variables)
+-Final Parameters
+-Final Methode
+-Final Classes
+----Final is a non-access modifier applicable only to :
+-Variables
+-Parameters
+-Methods
+-Classes
+-final Reference
+---- we can only assign the insial value for the final variables using final block or the constructurs
+----we can not overried final methods
+----we can not inherit from final class
+----all finales variables are locale variables
+----conclusion :final=stop values changes | stop Methode Overriding |Stop inheritance
+---------------------------------------------------------------------------------------------------------------------------------------------------
+*-----------------------------------------------------------------[8]ArrayListe--------------------------------------------------------------------*
+syntax: dataType[] arrName =new dataType[size]
+the arrayList class is a Dynamic,Resizable,Growable array
+which can be found in the java.util package
+arrayList can Dynamically grow and shrink after addition and removal of elements
+ArrayList can Not be used for primitive types like [int
+float,double,char,etc] you must specify an equivalent wrapper class
+as follows use Integer for int Float for float,Double for double this wrapper alows us to stend to use primitive data types oon the methodoes that s
+accept just primitive datatype
+methode TrimToSize();
+Hierarchy of ArrayList class [Iterable]
+                                  | extends
+                             [Collection]
+                                  |  extends
+                                [List]
+                                   |  implements
+                              [AbstractList]
+                                    |  extends
+                               [ArrayList]
+-------ArrayList it s very good as chosse if your programme make a random Access
